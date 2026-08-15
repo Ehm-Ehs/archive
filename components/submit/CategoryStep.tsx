@@ -35,24 +35,24 @@ export default function CategoryStep({
   const watchLanguage = watch("language");
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5 sm:gap-6">
       <div>
-        <span className="text-xs font-bold text-crayon-red italic font-handwriting text-lg">
+        <span className="text-xs font-bold text-crayon-red italic font-handwriting text-base sm:text-lg">
           STEP 1 OF 3
         </span>
-        <h2 className="font-handwriting font-bold text-4xl text-ink">
+        <h2 className="font-handwriting font-bold text-3xl sm:text-4xl text-ink">
           What are you sharing?
         </h2>
-        <p className="text-sm text-ink/70 font-medium mt-1">
+        <p className="text-xs sm:text-sm text-ink/70 font-medium mt-1">
           Choose a category to adapt the form fields to your cultural memory.
         </p>
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-heading font-semibold text-sm text-text-main">
+        <label className="font-heading font-semibold text-xs sm:text-sm text-text-main">
           Select Category *
         </label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-3">
           {categoryOptions.map((cat) => {
             const isSelected = watchCategory === cat.value;
             const Icon = cat.icon;
@@ -61,21 +61,24 @@ export default function CategoryStep({
                 key={cat.value}
                 type="button"
                 onClick={() => setValue("category", cat.value)}
-                className={`p-4 rounded-2xl flex flex-col items-center gap-2 font-handwriting text-2xl transition-all border ${
+                className={`p-2.5 sm:p-4 rounded-2xl flex flex-col items-center gap-1.5 font-handwriting transition-all border ${
                   isSelected
                     ? "bg-crayon-red text-white border-crayon-red shadow-coral scale-105"
                     : "bg-white dark:bg-neutral-800 text-ink border-black/15 hover:bg-black/5"
                 }`}
               >
-                <Icon size={24} />
-                <span>{cat.label}</span>
+                <Icon size={20} className="sm:hidden" />
+                <Icon size={24} className="hidden sm:block" />
+                <span className="text-center text-xs sm:text-xl leading-tight font-bold">
+                  {cat.value === "Rhyme / Song" ? "Song / Rhyme" : cat.value === "Proverb / Adage" ? "Proverb" : "Riddle"}
+                </span>
               </button>
             );
           })}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <Input
           label="Your name (optional)"
           placeholder="e.g. Aunty Ngozi or Brother Tunde"
@@ -93,16 +96,16 @@ export default function CategoryStep({
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="font-heading font-semibold text-sm text-text-main">
+        <label className="font-heading font-semibold text-xs sm:text-sm text-text-main">
           Language *
         </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {languagesList.map((lang) => (
             <button
               key={lang}
               type="button"
               onClick={() => setValue("language", lang as any)}
-              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all border ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border ${
                 watchLanguage === lang
                   ? "bg-brand-green text-white border-brand-green shadow-sm scale-105"
                   : "bg-white dark:bg-neutral-800 text-ink border-black/15 hover:bg-black/5"
@@ -114,7 +117,7 @@ export default function CategoryStep({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <Input
           label="Region / State"
           placeholder="e.g. Lagos State, Kano, Enugu..."
@@ -145,11 +148,11 @@ export default function CategoryStep({
         error={errors.learnedWhere?.message}
       />
 
-      <div className="flex justify-end mt-4">
+      <div className="flex justify-end mt-2 sm:mt-4">
         <Button
           type="button"
           onClick={onNext}
-          className="bg-crayon-red hover:bg-crayon-red-hover text-white font-handwriting text-2xl px-8 py-3 rounded-2xl shadow-coral"
+          className="w-full sm:w-auto bg-crayon-red hover:bg-crayon-red-hover text-white font-handwriting text-xl sm:text-2xl px-8 py-2.5 sm:py-3 rounded-2xl shadow-coral"
           rightIcon={<ArrowRight size={20} />}
         >
           Next

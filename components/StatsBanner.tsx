@@ -86,24 +86,25 @@ export default function StatsBanner({ rhymes }: StatsBannerProps) {
   ];
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mb-6 sm:mb-8">
       {statItems.map((stat, idx) => {
         const Icon = stat.icon;
         return (
           <div
             key={idx}
-            className="notebook-paper p-3.5 flex items-center gap-3 border border-black/10 shadow-sm"
+            className="notebook-paper p-2.5 sm:p-3.5 flex items-center gap-2 sm:gap-3 border border-black/10 shadow-sm"
           >
             <div
-              className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${stat.color}`}
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center shrink-0 ${stat.color}`}
             >
-              <Icon size={18} />
+              <Icon size={16} className="sm:hidden" />
+              <Icon size={18} className="hidden sm:block" />
             </div>
             <div>
-              <div className="font-heading font-extrabold text-xl leading-none text-ink">
+              <div className="font-heading font-extrabold text-lg sm:text-xl leading-none text-ink">
                 {stat.value}
               </div>
-              <div className="text-[0.72rem] font-semibold text-ink/70 mt-1 leading-tight">
+              <div className="text-[0.68rem] sm:text-[0.72rem] font-semibold text-ink/70 mt-0.5 sm:mt-1 leading-tight">
                 {stat.label}
               </div>
             </div>
