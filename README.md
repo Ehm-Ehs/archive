@@ -4,7 +4,7 @@
 
 ---
 
-## 🌟 Overview
+## Overview
 
 Across Nigeria and the diaspora, generations of children grew up chanting assembly march-in songs (*"Parents listen to your children..."*), solving moonlight riddles (*Àlọ́ Apagbe / Gwam Gwam Gwam*), reciting traditional proverbs (*Òwe / Ìlú / Magana*), and singing playground rhymes (*"Bata mi a dun koker..."*). As modern digital media replaces traditional storytelling, many of these oral treasures risk fading away.
 
@@ -12,9 +12,9 @@ Across Nigeria and the diaspora, generations of children grew up chanting assemb
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 1. 📑 3-Step Adaptive Submission Wizard
+### 1.  3-Step Adaptive Submission Wizard
 - **Category-Aware Form**: Adapts fields dynamically based on whether you are sharing a **Rhyme / Song**, a **Riddle**, or a **Proverb / Adage**.
 - **Contextual Requirements**:
   - **Songs**: Mandatory voice recordings so authentic tunes and rhythms are captured.
@@ -22,24 +22,24 @@ Across Nigeria and the diaspora, generations of children grew up chanting assemb
   - **Proverbs**: Optional usage meaning and cultural context.
 - **Moral & Extinction Scoring**: Tag entries with moral strengths (1–5) and extinction risk levels so endangered chants can be spotlighted.
 
-### 2. 🔍 Real-Time Duplicate & Similarity Detection
+### 2.  Real-Time Duplicate & Similarity Detection
 - Uses **Jaccard Index Text Normalization & Similarity Matching** to compare incoming submissions against stored archive entries in real-time.
 - Displays side-by-side comparisons for exact or similar entries and invites contributors to either propose stanzas to existing entries or submit as new.
 
-### 3. 📚 Filterable Public Cultural Gallery
+### 3.  Filterable Public Cultural Gallery
 - **Multi-Category Tabs**: Filter by **Rhyme / Song**, **Riddle**, or **Proverb / Adage**.
 - **Language & Region Filters**: Explore entries in Yoruba, Igbo, Hausa, Pidgin, Efik/Ibibio, Edo, Urhobo, Tiv, and English.
 - **Audio-Only & Search Filter**: Instantly search by lyrics, answers, proverbs, contributor, or region.
 - **Surprise Spotlight**: Random memory spotlight to discover hidden cultural gems.
 
-### 4. 🙈 Interactive Riddle Reveal Box
+### 4. Interactive Riddle Reveal Box
 - Riddle answers are hidden by default in the gallery and revealed smoothly when the user taps *"Tap to Reveal Answer"*.
 
-### 5. 🛡️ Admin Moderation Queue & Proposed Edits
+### 5.  Admin Moderation Queue & Proposed Edits
 - Community members can propose stanza additions or corrections to existing archive items.
 - Dedicated **Admin Queue (`/admin`)** allowing moderators to review, approve, or reject proposed edits.
 
-### 6. 💖 Real-Time Likes & Clipboard Copying
+### 6.  Real-Time Likes & Clipboard Copying
 - **Persisted Likes**: Like counters save directly to Firestore online in real-time.
 - **Universal Copy & Share**: Copy full lyrics, riddle answers, or proverb meanings with safe fallback clipboard support.
 
@@ -59,7 +59,7 @@ Across Nigeria and the diaspora, generations of children grew up chanting assemb
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```text
 ├── app/
@@ -94,7 +94,7 @@ Across Nigeria and the diaspora, generations of children grew up chanting assemb
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 - Node.js 18.x or later
@@ -155,6 +155,6 @@ Open `http://localhost:3000` to view the archive in your browser.
 
 ---
 
-## 📜 License
+##  License
 
 This project is open source and dedicated to the public domain under the **MIT License**. Cultural heritage contents preserved within this repository belong to the collective oral history of the Nigerian people.
