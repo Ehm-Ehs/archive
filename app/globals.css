@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-chalkboard: #1C372E;
+    --bg-chalkboard-dark: #122821;
+    --bg-paper: #FAF5E8;
+    --text-chalk: #F5F1E8;
+    --text-ink: #1C2321;
+    --crayon-red: #EA4335;
+    --crayon-yellow: #F2B705;
+    --brand-green: #234938;
+  }
+
+  [data-theme='dark'] {
+    --bg-chalkboard: #0E1D18;
+    --bg-chalkboard-dark: #08120F;
+    --bg-paper: #1A2823;
+    --text-chalk: #F5F1E8;
+    --text-ink: #F3F7F5;
+    --crayon-red: #F05A4B;
+    --crayon-yellow: #F4C430;
+    --brand-green: #10B981;
+  }
+
+  body {
+    background-color: var(--bg-chalkboard);
+    color: var(--text-chalk);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Handwritten Font Utility */
+.font-handwriting {
+  font-family: 'Caveat', 'Patrick Hand', cursive;
+}
+
+/* Exercise Book Lined Notebook Paper Card */
+.notebook-paper {
+  background-color: #FAF5E8;
+  background-image: linear-gradient(#E8E1D0 1px, transparent 1px);
+  background-size: 100% 30px;
+  color: #1C2321;
+  position: relative;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+}
+
+[data-theme='dark'] .notebook-paper {
+  background-color: #182823;
+  background-image: linear-gradient(#243A33 1px, transparent 1px);
+  color: #F3F7F5;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* Notebook Left Margin Line Removed */
+
+/* Chalkboard Noise Texture Overlay */
+.chalkboard-bg {
+  background-color: #1C372E;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+}
+
+/* Audio Wave Animations */
+@keyframes audioWave {
+  0%, 100% { height: 6px; }
+  50% { height: 24px; }
+}
+
+.wave-bar {
+  width: 4px;
+  background-color: #EA4335;
+  border-radius: 2px;
+  animation: audioWave 1.2s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(2) { animation-delay: 0.2s; }
+.wave-bar:nth-child(3) { animation-delay: 0.4s; }
+.wave-bar:nth-child(4) { animation-delay: 0.1s; }
+.wave-bar:nth-child(5) { animation-delay: 0.5s; }
+
+/* Floating Doodled Stars & Notes */
+@keyframes floatSlight {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+
+.animate-float {
+  animation: floatSlight 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for horizontal tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
